@@ -30,7 +30,7 @@ func (v *validation) ValidateStruct(s interface{}) error {
 
 func (v *validation) Translate(err error) error {
 	for _, e := range err.(validator.ValidationErrors) {
-		return fmt.Errorf(e.Translate(*v.trans))
+		return fmt.Errorf("%s", e.Translate(*v.trans))
 	}
 	return err
 }
